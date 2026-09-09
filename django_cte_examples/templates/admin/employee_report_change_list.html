@@ -1,0 +1,47 @@
+{% extends "admin/change_list.html" %}
+{% load humanize %}
+
+{% block content_title %}
+  <h1>Git Commits Summary</h1>
+{% endblock %}
+{% block result_list %}
+  <div class='results'>
+    <table>
+      <thead>
+        <tr>
+          <th>
+            <div class='text'>
+              <a href='#'>Reporting Month</a>
+            </div>
+          </th>
+          <th>
+            <div class='text'>
+              <a href='#'>Department Name</a>
+            </div>
+          </th>
+          <th>
+            <div class='text'>
+              <a href='#'>Employee Name</a>
+            </div>
+          </th>
+          <th>
+            <div class='text'>
+              <a href='#'>Number of Commits</a>
+            </div>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in summary %}
+          <tr >
+            <td> {{ row.reporting_year_month|date:"F Y" }} </td>
+            <td> {{ row.department_name }} </td>
+            <td> {{ row.employee_name }} </td>
+            <td> {{ row.number_of_commits | intcomma }} </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+{% endblock %}
+{% block pagination %}{% endblock %}

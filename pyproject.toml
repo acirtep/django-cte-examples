@@ -1,0 +1,13 @@
+[project]
+name = "django-cte-examples"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13.0"
+dependencies = [
+    "django==6.1.1",
+    "django-cte>=4.0.0",
+    "django-debug-toolbar>=8.0.0",
+    "faker>=40.38.0",
+    "ruff>=0.16.6",
+]
